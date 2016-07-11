@@ -4,7 +4,7 @@
     <h2 ng-show="$ctrl.isGameOver && $ctrl.hasWinner">{{$ctrl.winner.name}} wins!</h2>
     <h2 ng-show="$ctrl.isGameOver && !$ctrl.hasWinner">Tied!</h2>
 
-    <input ng-model="$ctrl.boardSize" type="number" ng-change="$ctrl.events.onSizeChange()"/>
+    board size: <input ng-model="$ctrl.boardSize" type="number" ng-change="$ctrl.events.onSizeChange()"/>
 
     <div class="board size-{{$ctrl.boardSize}}">
         <span class="board-row"
