@@ -24,12 +24,12 @@ body {
 
     text-align: center;
 }
-
 .board-space {
     display: block;
     position: relative;
     float: left;
     height: 100px;
+    width: 33%;
 
     background-color: white;
     border: 1px solid black;
@@ -37,23 +37,4 @@ body {
     font-size: 50px;
     text-align: center;
     line-height: 100px;
-}
-
-.board.size-1 .board-space {
-    width: 100%;
-}
-.board.size-2 .board-space {
-    width: 50%;
-}
-.board.size-3 .board-space {
-    width: 33%;
-}
-.board.size-4 .board-space {
-    width: 25%;
-}
-.board.size-5 .board-space {
-    width: 20%;
-}
-.board.size-6 .board-space {
-    width: 16%;
 }

@@ -11,10 +11,12 @@ angular.module('app').component('game', {
             $ctrl.hasWinner = false;
             $ctrl.winner = null;
 
-            $ctrl.board = [];
             $ctrl.boardSize = 3;
-            $ctrl.generateBoard();
-
+            $ctrl.board = [
+                new Array(3).fill(''),
+                new Array(3).fill(''),
+                new Array(3).fill('')
+            ];
             $ctrl.players = [
                 {index: 0, icon: 'x', name: 'X'},
                 {index: 1, icon: 'o', name: 'O'}
@@ -23,13 +25,6 @@ angular.module('app').component('game', {
 
             $ctrl.currentPlayerId = -1;
             $ctrl.setNextPlayer();
-        }
-
-        $ctrl.generateBoard = function(){
-            $ctrl.board = [];
-            for( var i = 0; i < $ctrl.boardSize; i += 1 ){
-                $ctrl.board.push(new Array($ctrl.boardSize).fill(''));
-            }
         }
 
         $ctrl.setNextPlayer = function(){
@@ -82,9 +77,6 @@ angular.module('app').component('game', {
         }
 
         $ctrl.events = {
-            onSizeChange: function(){
-                $ctrl.generateBoard();
-            },
             onSpaceClick: function( row, col ){
                 if( $ctrl.isGameOver || $ctrl.board[row][col].length > 0){
                     return;
