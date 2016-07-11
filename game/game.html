@@ -1,0 +1,15 @@
+<div class="game">
+    <h1 ng-hide="$ctrl.isGameOver">Current Player: {{$ctrl.currentPlayer.name}}</h1>
+    <h1 ng-show="$ctrl.isGameOver">Game Over</h1>
+    <h2 ng-show="$ctrl.isGameOver && $ctrl.hasWinner">{{$ctrl.winner.name}} wins!</h2>
+    <h2 ng-show="$ctrl.isGameOver && !$ctrl.hasWinner">Tied!</h2>
+
+    <div class="board">
+        <span class="board-row"
+             ng-repeat="(rowIndex, row) in $ctrl.board track by $index">
+            <span class="board-space" ng-repeat="(spaceIndex, playerIcon) in row track by $index" ng-click="$ctrl.events.onSpaceClick(rowIndex, spaceIndex)">
+                {{playerIcon}}
+            </span>
+        </span>
+    </div>
+</div>
